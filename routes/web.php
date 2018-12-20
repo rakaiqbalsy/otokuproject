@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = App\Catalogpost::all();
+    return view('welcome')->withPosts($posts);
 });
 
 Auth::routes(['verify' => true]);
@@ -21,3 +22,5 @@ Route::get('profile', function () {
 })->middleware('verified');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('catalogposts','CatalogpostController');

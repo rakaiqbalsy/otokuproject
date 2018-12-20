@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title')</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     
 
@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -27,9 +27,10 @@
         
 
         <main class="py-4">
-           @include('includes.navbar')
+            @include('includes.navbar')
 
             @include('includes.info')
+
             @yield('content')
 
             @include('includes.footer')

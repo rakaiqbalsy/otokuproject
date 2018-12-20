@@ -58,102 +58,24 @@
                 </div>
   
       <div id="grid_post" class="row list-group">
- 
-         <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail as">
-               <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                    <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-
-                     </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
-                    <div class="row"></div>
-                </div>
-                
-            </div>
-        </div>
      
-     <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail as">
-               <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                    <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-
-                     </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
-                    <div class="row"></div>
-                </div>
-                
-            </div>
-        </div>
-
+    @foreach($posts as $post)
         <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail as">
                <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
                 <div class="caption">
                     <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
+                    <h4 class="group inner list-group-item-heading"><a href="{{url('catalogposts/'.$post->id)}}">{{str_limit($post->title, 20)}}</a></h4>
+                         <small>{{date('j F Y,h:ia', strtotime($post->created_at))}}</small> | by <a href="#">Admin</a>
 
                      </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
+                    <p class="group inner list-group-item-text">{{str_limit($post->content, 50)}}</p>
                     <div class="row"></div>
                 </div>
                 
             </div>
         </div>
-
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail as">
-               <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                    <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-
-                     </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
-                    <div class="row"></div>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail as">
-               <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                    <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-
-                     </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
-                    <div class="row"></div>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail as">
-               <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                    <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-
-                     </div>
-                    <p class="group inner list-group-item-text">Post Content</p>
-                    <div class="row"></div>
-                </div>
-                
-            </div>
-        </div>
+    @endforeach
   </div><!-- end grid -->
 </div>
 
