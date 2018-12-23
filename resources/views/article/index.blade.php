@@ -81,7 +81,7 @@
                 <div class="caption">
                     <div class="c_hr">
                     <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                         <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
+                         <small> 10 November 2017, 8:25pm</small> | by <a href="#">Admin</a>
 
                      </div>
                     <p class="group inner list-group-item-text">Post Content</p>
